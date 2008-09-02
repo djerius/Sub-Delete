@@ -1,7 +1,10 @@
 Revision history for Sub::Delete
 
-Er, there haven’t actually *been* any changes yet. So much for the
-name of this file!
+0.02    2 September, 2008
+        One bug fix: If you call delete_sub with a fully-qualified sub
+        name (e.g., "Acme::Soap::wash"),  and there is another slot in
+        use in the same glob  (e.g.,  @Acme::Soap::wash),  the  latter
+        doesn’t get deleted anymore.
 
 0.01    24 July, 2008
         First release

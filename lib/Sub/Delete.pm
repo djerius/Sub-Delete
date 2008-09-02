@@ -2,7 +2,7 @@ use 5.008003;
 
 package Sub::Delete;
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 @EXPORT = delete_sub;
 use Exporter 5.57 'import';
 
@@ -16,10 +16,10 @@ sub delete_sub {
 	my $sub = shift;
 	my($stashname, $key) = $sub =~ /(.*::)((?:(?!::).)*)\z/s
 		? ($1,$2) : (caller()."::", $sub);
-	exists +($stash = \%$stashname)->{$key} or return;
+	exists +(my $stash = \%$stashname)->{$key} or return;
 	ref $stash->{$key} eq 'SCALAR' and  # perl5.10 constant
 		delete $stash->{$key}, return;
-	my $globname = "$stashname$sub"; 
+	my $globname = "$stashname$key"; 
 	my $glob = \*$globname; # autovivify the glob in case future perl
         delete $stash->{$key};  # versions add new funny stuff
 	my $newglob = \*$globname;
@@ -38,7 +38,7 @@ Sub::Delete - Perl module enabling one to delete subroutines
 
 =head1 VERSION
 
-0.01 (beta)
+0.02 (beta)
 
 =head1 SYNOPSIS
 
@@ -62,7 +62,7 @@ references to it elsewhere, including in compiled code).
 
 =head1 PREREQUISITES
 
-This module requires L<perl> 5.8.0 or later and L<Exporter> 5.57 or later.
+This module requires L<perl> 5.8.3 or higher.
 
 =head1 BUGS
 

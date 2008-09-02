@@ -1,4 +1,4 @@
-Sub::Delete, version 0.01 (beta)
+Sub::Delete, version 0.02 (beta)
 
 This module allows one to delete a subroutine. Not much to it.
 
@@ -18,6 +18,14 @@ Or you can use the following:
     make
     make test
     [sudo] make install
+
+
+CHANGES IN THIS RELEASE
+
+One bug fix: If you call delete_sub with a fully-qualified sub name
+(e.g.,  "Acme::Soap::wash"),  and there is another slot in  use  in
+the same glob  (e.g.,  @Acme::Soap::wash),  the latter doesn’t  get
+deleted anymore.
 
 
 DEPENDENCIES
