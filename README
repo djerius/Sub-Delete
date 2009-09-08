@@ -1,4 +1,4 @@
-Sub::Delete, version 0.02 (beta)
+Sub::Delete, version 0.03 (beta)
 
 This module allows one to delete a subroutine. Not much to it.
 
@@ -22,11 +22,12 @@ Or you can use the following:
 
 CHANGES IN THIS RELEASE
 
-One bug fix: If you call delete_sub with a fully-qualified sub name
-(e.g.,  "Acme::Soap::wash"),  and there is another slot in  use  in
-the same glob  (e.g.,  @Acme::Soap::wash),  the latter doesn’t  get
-deleted anymore.
-
+• Deleting a subroutine whose glob contains only that subroutine  now
+  deletes the glob as well,  so ‘delete_sub 'clext'’ now fully undoes
+  what ‘sub clext;’ does.
+• Deleting a subroutine that shared a glob with other variables  used
+  to  do  an  effective  ‘use vars’  on  those  variables.  This  has
+  been fixed.
 
 DEPENDENCIES
 
@@ -47,7 +48,7 @@ Or try using man (it's faster, in my experience):
 
 COPYRIGHT AND LICENCE
 
-Copyright (C) 2008 Father Chrysostomos
+Copyright © 2008-9 Father Chrysostomos
 
 This program is free software; you may redistribute it and/or modify
 it under the same terms as perl.

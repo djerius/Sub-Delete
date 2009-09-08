@@ -11,6 +11,7 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
          Exporter                         => 5.57,
+         strict                           => 0,
 # for testing:
 	Test::More => 0,
 	warnings   => 0,
