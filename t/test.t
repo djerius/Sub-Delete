@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 
+use lib 't';
 use Test::More tests => 23;
 
 BEGIN { use_ok 'Sub::Delete' };

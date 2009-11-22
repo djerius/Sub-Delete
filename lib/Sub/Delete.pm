@@ -2,7 +2,7 @@ use 5.008003;
 
 package Sub::Delete;
 
-$VERSION = '0.03';
+$VERSION = '1.00000';
 @EXPORT = delete_sub;
 use Exporter 5.57 'import';
 
@@ -67,7 +67,7 @@ Sub::Delete - Perl module enabling one to delete subroutines
 
 =head1 VERSION
 
-0.03 (beta)
+1.00000
 
 =head1 SYNOPSIS
 
@@ -100,8 +100,7 @@ the subroutine with C<delete_sub>, you will find that the glob you
 referenced still has a subroutine in it. This is because C<delete_sub>
 removes a glob, replaces it with another, and then copies the contents of
 the old glob into the new one, except for the C<CODE> slot. (This is nearly
-impossible to fix without breaking any::feature and
-constant::lexical.)
+impossible to fix without breaking constant::lexical.)
 
 =head1 BUGS
 

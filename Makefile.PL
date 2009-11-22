@@ -13,7 +13,6 @@ WriteMakefile(
          Exporter                         => 5.57,
          strict                           => 0,
 # for testing:
-	Test::More => 0,
 	warnings   => 0,
     },
     dist               => { COMPRESS => 'gzip -9f', SUFFIX => 'gz',
