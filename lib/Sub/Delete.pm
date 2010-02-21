@@ -2,12 +2,14 @@ use 5.008003;
 
 package Sub::Delete;
 
-$VERSION = '1.00000';
+$VERSION = '1.00001';
 @EXPORT = delete_sub;
 use Exporter 5.57 'import';
+use constant point0 => 0+$] eq 5.01;
 
 # This sub must come before any lexical vars.
 sub strict_eval($) {
+ local %^H if point0;
  use#
   strict 'vars';
  local $SIG{__WARN__} = sub {};
@@ -67,7 +69,7 @@ Sub::Delete - Perl module enabling one to delete subroutines
 
 =head1 VERSION
 
-1.00000
+1.00001
 
 =head1 SYNOPSIS
 

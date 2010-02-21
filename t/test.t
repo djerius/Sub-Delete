@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 use lib 't';
-use Test::More tests => 23;
+use Test::More tests => 24;
 
 BEGIN { use_ok 'Sub::Delete' };
 
@@ -120,3 +120,18 @@ delete_sub 'glob';  # delete_sub and we are making sure it doesn’t
 sub bange { 3 }
 is eval { bange }, 3, 'deleted subroutines can be called';
 BEGIN { delete_sub 'bange' }
+
+# %^H leakage in perl 5.10.0
+{
+ package ScopeHook;
+ DESTROY { ++$exited }
+}
+sub spow;
+{
+ BEGIN {
+  $^H |= 0x20000;
+  $^H{'Sub::Delete_test'} = bless [], ScopeHook;
+  delete_sub "spow";
+ }
+}
+BEGIN { is $ScopeHook::exited, 1, "delete_sub does not cause %^H to leak" }

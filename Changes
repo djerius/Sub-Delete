@@ -1,5 +1,10 @@
 Revision history for Sub::Delete
 
+1.00001  21 February, 2010
+         A workaround for a %^H scoping bug in perl 5.10.0:  this was
+         triggered by  Sub::Delete,  affecting  other  modules,  like
+         constant::lexical.
+
 1.00000  15 November, 2009
          The only new feature in this release is that the version num-
          ber no longer begin with a zero.

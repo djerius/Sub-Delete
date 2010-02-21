@@ -10,6 +10,7 @@ WriteMakefile(
     ABSTRACT_FROM       => 'lib/Sub/Delete.pm',
     PL_FILES            => {},
     PREREQ_PM => {
+         constant                         => 0,
          Exporter                         => 5.57,
          strict                           => 0,
 # for testing:

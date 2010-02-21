@@ -1,4 +1,4 @@
-Sub::Delete, version 1.00000
+Sub::Delete, version 1.00001
 
 This module allows one to delete a subroutine. Not much to it.
 
@@ -22,8 +22,7 @@ Or you can use the following:
 
 CHANGES IN THIS RELEASE
 
-The only new feature in this release is that the  version  number  no
-longer begin with a zero.
+A workaround for a %^H scoping bug in perl 5.10.0
 
 
 DEPENDENCIES
