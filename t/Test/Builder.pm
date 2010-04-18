@@ -1,3 +1,8 @@
+# This is slightly modified from the standard version, in that it has
+#  local(*@, $!);
+# instead of
+#  local($@, $!);
+
 package Test::Builder;
 
 use 5.004;
@@ -466,7 +471,7 @@ sub _unoverload {
     my $self  = shift;
     my $type  = shift;
 
-    local($@,$!);
+    local(*@,$!);
 
     eval { require overload } || return;
 

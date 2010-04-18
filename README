@@ -1,4 +1,4 @@
-Sub::Delete, version 1.00001
+Sub::Delete, version 1.00002
 
 This module allows one to delete a subroutine. Not much to it.
 
@@ -22,7 +22,7 @@ Or you can use the following:
 
 CHANGES IN THIS RELEASE
 
-A workaround for a %^H scoping bug in perl 5.10.0
+delete_sub no longer leaks messages into $@.
 
 
 DEPENDENCIES
@@ -44,7 +44,7 @@ Or try using man (it's faster, in my experience):
 
 COPYRIGHT AND LICENCE
 
-Copyright © 2008-9 Father Chrysostomos
+Copyright © 2008-10 Father Chrysostomos
 
 This program is free software; you may redistribute it and/or modify
 it under the same terms as perl.

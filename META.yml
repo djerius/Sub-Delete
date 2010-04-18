@@ -1,7 +1,7 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         Sub-Delete
-version:      1.00001
+version:      1.00002
 version_from: lib/Sub/Delete.pm
 installdirs:  site
 requires:

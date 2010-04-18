@@ -1,5 +1,8 @@
 Revision history for Sub::Delete
 
+1.00002  18 April, 2010
+         delete_sub no longer leaks messages into $@.
+
 1.00001  21 February, 2010
          A workaround for a %^H scoping bug in perl 5.10.0:  this was
          triggered by  Sub::Delete,  affecting  other  modules,  like

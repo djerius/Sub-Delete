@@ -2,7 +2,7 @@ use 5.008003;
 
 package Sub::Delete;
 
-$VERSION = '1.00001';
+$VERSION = '1.00002';
 @EXPORT = delete_sub;
 use Exporter 5.57 'import';
 use constant point0 => 0+$] eq 5.01;
@@ -10,6 +10,7 @@ use constant point0 => 0+$] eq 5.01;
 # This sub must come before any lexical vars.
 sub strict_eval($) {
  local %^H if point0;
+ local *@;
  use#
   strict 'vars';
  local $SIG{__WARN__} = sub {};
@@ -69,7 +70,7 @@ Sub::Delete - Perl module enabling one to delete subroutines
 
 =head1 VERSION
 
-1.00001
+1.00002
 
 =head1 SYNOPSIS
 
@@ -110,7 +111,7 @@ If you find any bugs, please report them to the author via e-mail.
 
 =head1 AUTHOR & COPYRIGHT
 
-Copyright (C) 2008-9 Father Chrysostomos (sprout at, um, cpan dot org)
+Copyright (C) 2008-10 Father Chrysostomos (sprout at, um, cpan dot org)
 
 This program is free software; you may redistribute or modify it (or both)
 under the same terms as perl.

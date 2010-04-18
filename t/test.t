@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 use lib 't';
-use Test::More tests => 24;
+use Test::More tests => 26;
 
 BEGIN { use_ok 'Sub::Delete' };
 
@@ -135,3 +135,13 @@ sub spow;
  }
 }
 BEGIN { is $ScopeHook::exited, 1, "delete_sub does not cause %^H to leak" }
+
+# $@ leakage
+sub jare;
+$@ = 'fring';
+delete_sub 'jare';
+is $@, 'fring', '$@ does not leak';
+sub TIESCALAR{bless[]}
+tie $@, "";
+sub feck;
+ok eval{delete_sub 'feck';1}, '$@ is quite literally untouched';
