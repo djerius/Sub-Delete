@@ -1,5 +1,10 @@
 Revision history for Sub::Delete
 
+1.00002_01  22 February 2025
+         - unbundle Test::More
+         - replace q{'} with q{::} as package separator, as it is
+           use is deprecated as of Perl 5.38
+
 1.00002  18 April, 2010
          delete_sub no longer leaks messages into $@.
 
