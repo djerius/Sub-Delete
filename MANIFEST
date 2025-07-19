@@ -6,3 +6,6 @@ MANIFEST.SKIP
 META.yml			Module meta-data (added by MakeMaker)
 README
 t/test.t
+t/Test/Builder.pm
+t/Test/Builder/Module.pm
+t/Test/More.pm
