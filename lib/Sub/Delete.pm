@@ -2,7 +2,7 @@ use 5.008003;
 
 package Sub::Delete;
 
-$VERSION = '1.00002_01';
+$VERSION = '1.00002_02';
 @EXPORT = delete_sub;
 use Exporter 5.57 'import';
 use constant point0 => 0+$] eq 5.01;
@@ -70,7 +70,7 @@ Sub::Delete - Perl module enabling one to delete subroutines
 
 =head1 VERSION
 
-1.00002_01
+1.00002_02
 
 =head1 SYNOPSIS
 
