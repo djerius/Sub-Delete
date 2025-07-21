@@ -1,5 +1,11 @@
 Revision history for Sub::Delete
 
+1.00002_02  19 July 2025
+
+         - re-bundle the Test::More originally bundled with the
+           distribution. CPAN versions circa 2025 cause test of 'tie
+           $@' to erroneously fail on Perl 5.10.0.
+
 1.00002_01  22 February 2025
          - unbundle Test::More
          - replace q{'} with q{::} as package separator, as it is
