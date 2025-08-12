@@ -1,5 +1,10 @@
 Revision history for Sub::Delete
 
+1.00003     12 August 2025
+
+         - promote to stable; passes on 5.10.0 locally; no CPAN
+           Testers results
+
 1.00002_02  19 July 2025
 
          - re-bundle the Test::More originally bundled with the
